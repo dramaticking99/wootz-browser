@@ -1,7 +1,6 @@
-# Copyright (c) 2024 The Wootzapp Authors. All rights reserved.
-# This Source Code Form is subject to the terms of the Mozilla Public
-# License, v. 2.0. If a copy of the MPL was not distributed with this file,
-# You can obtain one at https://mozilla.org/MPL/2.0/.
+# Copyright 2023 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
 
 # @generated from third_party/rust/chromium_crates_io/BUILD.gn.hbs by
 # tools/crates/gnrt.
@@ -14,15 +13,15 @@ cargo_crate("lib") {
   epoch = "0.5"
   crate_type = "rlib"
   crate_root =
-      "//third_party/rust/chromium_crates_io/vendor/wyz-0.5.1/src/lib.rs"
+      "//third_party/rust/chromium_crates_io/vendor/wyz-v0_5/src/lib.rs"
   sources = [
-    "//third_party/rust/chromium_crates_io/vendor/wyz-0.5.1/src/bidi.rs",
-    "//third_party/rust/chromium_crates_io/vendor/wyz-0.5.1/src/comu.rs",
-    "//third_party/rust/chromium_crates_io/vendor/wyz-0.5.1/src/exit.rs",
-    "//third_party/rust/chromium_crates_io/vendor/wyz-0.5.1/src/fmt.rs",
-    "//third_party/rust/chromium_crates_io/vendor/wyz-0.5.1/src/lib.rs",
-    "//third_party/rust/chromium_crates_io/vendor/wyz-0.5.1/src/range.rs",
-    "//third_party/rust/chromium_crates_io/vendor/wyz-0.5.1/src/wm.rs",
+    "//third_party/rust/chromium_crates_io/vendor/wyz-v0_5/src/bidi.rs",
+    "//third_party/rust/chromium_crates_io/vendor/wyz-v0_5/src/comu.rs",
+    "//third_party/rust/chromium_crates_io/vendor/wyz-v0_5/src/exit.rs",
+    "//third_party/rust/chromium_crates_io/vendor/wyz-v0_5/src/fmt.rs",
+    "//third_party/rust/chromium_crates_io/vendor/wyz-v0_5/src/lib.rs",
+    "//third_party/rust/chromium_crates_io/vendor/wyz-v0_5/src/range.rs",
+    "//third_party/rust/chromium_crates_io/vendor/wyz-v0_5/src/wm.rs",
   ]
   inputs = []
 
@@ -32,6 +31,7 @@ cargo_crate("lib") {
   cargo_pkg_authors = "myrrlyn <self@myrrlyn.dev>"
   cargo_pkg_name = "wyz"
   cargo_pkg_description = "myrrlyn’s utility collection"
+  library_configs -= [ "//build/config/coverage:default_coverage" ]
   library_configs -= [ "//build/config/compiler:chromium_code" ]
   library_configs += [ "//build/config/compiler:no_chromium_code" ]
   executable_configs -= [ "//build/config/compiler:chromium_code" ]
@@ -39,4 +39,12 @@ cargo_crate("lib") {
   proc_macro_configs -= [ "//build/config/compiler:chromium_code" ]
   proc_macro_configs += [ "//build/config/compiler:no_chromium_code" ]
   deps = [ "//third_party/rust/tap/v1:lib" ]
+  rustflags = [
+    "--cap-lints=allow",  # Suppress all warnings in crates.io crates
+  ]
+
+  # Only for usage from third-party crates. Add the crate to
+  # //third_party/rust/chromium_crates_io/Cargo.toml to use
+  # it from first-party code.
+  visibility = [ "*" ]
 }

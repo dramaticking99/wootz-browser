@@ -12,15 +12,15 @@ cargo_crate("lib") {
   crate_name = "proc_macro_error"
   epoch = "1"
   crate_type = "rlib"
-  crate_root = "//third_party/rust/chromium_crates_io/vendor/proc-macro-error-1.0.4/src/lib.rs"
+  crate_root = "//third_party/rust/chromium_crates_io/vendor/proc-macro-error-v1/src/lib.rs"
   sources = [
-    "//third_party/rust/chromium_crates_io/vendor/proc-macro-error-1.0.4/src/diagnostic.rs",
-    "//third_party/rust/chromium_crates_io/vendor/proc-macro-error-1.0.4/src/dummy.rs",
-    "//third_party/rust/chromium_crates_io/vendor/proc-macro-error-1.0.4/src/imp/delegate.rs",
-    "//third_party/rust/chromium_crates_io/vendor/proc-macro-error-1.0.4/src/imp/fallback.rs",
-    "//third_party/rust/chromium_crates_io/vendor/proc-macro-error-1.0.4/src/lib.rs",
-    "//third_party/rust/chromium_crates_io/vendor/proc-macro-error-1.0.4/src/macros.rs",
-    "//third_party/rust/chromium_crates_io/vendor/proc-macro-error-1.0.4/src/sealed.rs",
+    "//third_party/rust/chromium_crates_io/vendor/proc-macro-error-v1/src/diagnostic.rs",
+    "//third_party/rust/chromium_crates_io/vendor/proc-macro-error-v1/src/dummy.rs",
+    "//third_party/rust/chromium_crates_io/vendor/proc-macro-error-v1/src/imp/delegate.rs",
+    "//third_party/rust/chromium_crates_io/vendor/proc-macro-error-v1/src/imp/fallback.rs",
+    "//third_party/rust/chromium_crates_io/vendor/proc-macro-error-v1/src/lib.rs",
+    "//third_party/rust/chromium_crates_io/vendor/proc-macro-error-v1/src/macros.rs",
+    "//third_party/rust/chromium_crates_io/vendor/proc-macro-error-v1/src/sealed.rs",
   ]
   inputs = []
 
@@ -30,6 +30,7 @@ cargo_crate("lib") {
   cargo_pkg_authors = "CreepySkeleton <creepy-skeleton@yandex.ru>"
   cargo_pkg_name = "proc-macro-error"
   cargo_pkg_description = "Almost drop-in replacement to panics in proc-macros"
+  library_configs -= [ "//build/config/coverage:default_coverage" ]
   library_configs -= [ "//build/config/compiler:chromium_code" ]
   library_configs += [ "//build/config/compiler:no_chromium_code" ]
   executable_configs -= [ "//build/config/compiler:chromium_code" ]
@@ -44,14 +45,20 @@ cargo_crate("lib") {
   ]
   build_deps = [ "//third_party/rust/version_check/v0_9:buildrs_support" ]
   features = [
+    "default",
     "syn",
     "syn-error",
   ]
-  build_root = "//third_party/rust/chromium_crates_io/vendor/proc-macro-error-1.0.4/build.rs"
-  build_sources = [ "//third_party/rust/chromium_crates_io/vendor/proc-macro-error-1.0.4/build.rs" ]
+  build_root = "//third_party/rust/chromium_crates_io/vendor/proc-macro-error-v1/build.rs"
+  build_sources = [
+    "//third_party/rust/chromium_crates_io/vendor/proc-macro-error-v1/build.rs",
+  ]
+  rustflags = [
+    "--cap-lints=allow",  # Suppress all warnings in crates.io crates
+  ]
 
   # Only for usage from third-party crates. Add the crate to
   # //third_party/rust/chromium_crates_io/Cargo.toml to use
   # it from first-party code.
-  visibility = [ "//third_party/rust/*" ]
+  visibility = [ "*" ]
 }

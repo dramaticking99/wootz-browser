@@ -1,7 +1,6 @@
-# Copyright (c) 2024 The Wootzapp Authors. All rights reserved.
-# This Source Code Form is subject to the terms of the Mozilla Public
-# License, v. 2.0. If a copy of the MPL was not distributed with this file,
-# You can obtain one at https://mozilla.org/MPL/2.0/.
+# Copyright 2023 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
 
 # @generated from third_party/rust/chromium_crates_io/BUILD.gn.hbs by
 # tools/crates/gnrt.
@@ -13,44 +12,46 @@ cargo_crate("lib") {
   crate_name = "num_bigint"
   epoch = "0.4"
   crate_type = "rlib"
-  crate_root = "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/lib.rs"
+  crate_root =
+      "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/lib.rs"
   sources = [
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/bigint.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/bigint/addition.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/bigint/arbitrary.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/bigint/bits.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/bigint/convert.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/bigint/division.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/bigint/multiplication.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/bigint/power.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/bigint/serde.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/bigint/shift.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/bigint/subtraction.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/bigrand.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/biguint.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/biguint/addition.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/biguint/arbitrary.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/biguint/bits.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/biguint/convert.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/biguint/division.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/biguint/iter.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/biguint/monty.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/biguint/multiplication.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/biguint/power.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/biguint/serde.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/biguint/shift.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/biguint/subtraction.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/lib.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/macros.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/bigint.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/bigint/addition.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/bigint/arbitrary.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/bigint/bits.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/bigint/convert.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/bigint/division.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/bigint/multiplication.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/bigint/power.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/bigint/serde.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/bigint/shift.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/bigint/subtraction.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/bigrand.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/biguint.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/biguint/addition.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/biguint/arbitrary.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/biguint/bits.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/biguint/convert.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/biguint/division.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/biguint/iter.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/biguint/monty.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/biguint/multiplication.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/biguint/power.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/biguint/serde.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/biguint/shift.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/biguint/subtraction.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/lib.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num-bigint-v0_4/src/macros.rs",
   ]
-  inputs = [ "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/src/../README.md" ]
+  inputs = []
 
   build_native_rust_unit_tests = false
-  edition = "2018"
-  cargo_pkg_version = "0.4.3"
+  edition = "2021"
+  cargo_pkg_version = "0.4.6"
   cargo_pkg_authors = "The Rust Project Developers"
   cargo_pkg_name = "num-bigint"
   cargo_pkg_description = "Big integer implementation for Rust"
+  library_configs -= [ "//build/config/coverage:default_coverage" ]
   library_configs -= [ "//build/config/compiler:chromium_code" ]
   library_configs += [ "//build/config/compiler:no_chromium_code" ]
   executable_configs -= [ "//build/config/compiler:chromium_code" ]
@@ -59,19 +60,18 @@ cargo_crate("lib") {
   proc_macro_configs += [ "//build/config/compiler:no_chromium_code" ]
   deps = [
     "//third_party/rust/num_integer/v0_1:lib",
-    "//third_party/rust/android_system_properties/v0_1:lib",
     "//third_party/rust/num_traits/v0_2:lib",
   ]
-  build_deps = [ "//third_party/rust/autocfg/v1:buildrs_support" ]
-  features = [ "std" ]
-  build_root = "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/build.rs"
-  build_sources = [ "//third_party/rust/chromium_crates_io/vendor/num-bigint-0.4.3/build.rs" ]
-  if (target_cpu == "arm64" || target_cpu == "x64") {
-    rustenv = [ "CARGO_CFG_TARGET_POINTER_WIDTH=64" ]
-  } else {
-    rustenv = [ "CARGO_CFG_TARGET_POINTER_WIDTH=32" ]
-  }
-  if (epoch != "0.2") {
-    build_script_outputs = [ "radix_bases.rs" ]
-  }
+  features = [
+    "default",
+    "std",
+  ]
+  rustflags = [
+    "--cap-lints=allow",  # Suppress all warnings in crates.io crates
+  ]
+
+  # Only for usage from third-party crates. Add the crate to
+  # //third_party/rust/chromium_crates_io/Cargo.toml to use
+  # it from first-party code.
+  visibility = [ "*" ]
 }

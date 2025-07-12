@@ -13,12 +13,12 @@ cargo_crate("lib") {
   epoch = "3"
   crate_type = "rlib"
   crate_root =
-      "//third_party/rust/chromium_crates_io/vendor/merlin-3.0.0/src/lib.rs"
+      "//third_party/rust/chromium_crates_io/vendor/merlin-v3/src/lib.rs"
   sources = [
-    "//third_party/rust/chromium_crates_io/vendor/merlin-3.0.0/src/constants.rs",
-    "//third_party/rust/chromium_crates_io/vendor/merlin-3.0.0/src/lib.rs",
-    "//third_party/rust/chromium_crates_io/vendor/merlin-3.0.0/src/strobe.rs",
-    "//third_party/rust/chromium_crates_io/vendor/merlin-3.0.0/src/transcript.rs",
+    "//third_party/rust/chromium_crates_io/vendor/merlin-v3/src/constants.rs",
+    "//third_party/rust/chromium_crates_io/vendor/merlin-v3/src/lib.rs",
+    "//third_party/rust/chromium_crates_io/vendor/merlin-v3/src/strobe.rs",
+    "//third_party/rust/chromium_crates_io/vendor/merlin-v3/src/transcript.rs",
   ]
   inputs = []
 
@@ -29,6 +29,7 @@ cargo_crate("lib") {
   cargo_pkg_name = "merlin"
   cargo_pkg_description =
       "Composable proof transcripts for public-coin arguments of knowledge"
+  library_configs -= [ "//build/config/coverage:default_coverage" ]
   library_configs -= [ "//build/config/compiler:chromium_code" ]
   library_configs += [ "//build/config/compiler:no_chromium_code" ]
   executable_configs -= [ "//build/config/compiler:chromium_code" ]
@@ -41,9 +42,12 @@ cargo_crate("lib") {
     "//third_party/rust/rand_core/v0_6:lib",
     "//third_party/rust/zeroize/v1:lib",
   ]
+  rustflags = [
+    "--cap-lints=allow",  # Suppress all warnings in crates.io crates
+  ]
 
   # Only for usage from third-party crates. Add the crate to
   # //third_party/rust/chromium_crates_io/Cargo.toml to use
   # it from first-party code.
-  visibility = [ "//third_party/rust/*" ]
+  visibility = [ "*" ]
 }

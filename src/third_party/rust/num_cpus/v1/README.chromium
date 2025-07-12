@@ -1,9 +1,10 @@
 Name: num_cpus
 URL: https://crates.io/crates/num_cpus
-Description: Get the number of CPUs on a machine.
-Version: 1.16.0
-Security Critical: yes
+Version: 1.17.0
+Revision: 342af76b486335e5a955c7314fc96cd104e7a17b
+License: Apache-2.0
+License File: //third_party/rust/chromium_crates_io/vendor/num_cpus-v1/LICENSE-APACHE
 Shipped: yes
-License: Apache 2.0
-License File: //third_party/rust/chromium_crates_io/vendor/num_cpus-1.16.0/LICENSE-APACHE
-Revision: 7c03fc930cc47a9b94e8ca66ca44ef1a454c8f51
+Security Critical: yes
+
+Description: Get the number of CPUs on a machine.

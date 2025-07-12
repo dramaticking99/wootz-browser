@@ -44,5 +44,5 @@ cargo_crate("lib") {
     "--cap-lints=allow",  # Suppress all warnings in crates.io crates
   ]
 
-  # testonly = true
+  testonly = false
 }

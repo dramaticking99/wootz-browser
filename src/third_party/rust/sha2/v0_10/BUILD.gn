@@ -13,21 +13,21 @@ cargo_crate("lib") {
   epoch = "0.10"
   crate_type = "rlib"
   crate_root =
-      "//third_party/rust/chromium_crates_io/vendor/sha2-0.10.8/src/lib.rs"
+      "//third_party/rust/chromium_crates_io/vendor/sha2-v0_10/src/lib.rs"
   sources = [
-    "//third_party/rust/chromium_crates_io/vendor/sha2-0.10.8/src/consts.rs",
-    "//third_party/rust/chromium_crates_io/vendor/sha2-0.10.8/src/core_api.rs",
-    "//third_party/rust/chromium_crates_io/vendor/sha2-0.10.8/src/lib.rs",
-    "//third_party/rust/chromium_crates_io/vendor/sha2-0.10.8/src/sha256.rs",
-    "//third_party/rust/chromium_crates_io/vendor/sha2-0.10.8/src/sha256/aarch64.rs",
-    "//third_party/rust/chromium_crates_io/vendor/sha2-0.10.8/src/sha256/loongarch64_asm.rs",
-    "//third_party/rust/chromium_crates_io/vendor/sha2-0.10.8/src/sha256/soft.rs",
-    "//third_party/rust/chromium_crates_io/vendor/sha2-0.10.8/src/sha256/x86.rs",
-    "//third_party/rust/chromium_crates_io/vendor/sha2-0.10.8/src/sha512.rs",
-    "//third_party/rust/chromium_crates_io/vendor/sha2-0.10.8/src/sha512/aarch64.rs",
-    "//third_party/rust/chromium_crates_io/vendor/sha2-0.10.8/src/sha512/loongarch64_asm.rs",
-    "//third_party/rust/chromium_crates_io/vendor/sha2-0.10.8/src/sha512/soft.rs",
-    "//third_party/rust/chromium_crates_io/vendor/sha2-0.10.8/src/sha512/x86.rs",
+    "//third_party/rust/chromium_crates_io/vendor/sha2-v0_10/src/consts.rs",
+    "//third_party/rust/chromium_crates_io/vendor/sha2-v0_10/src/core_api.rs",
+    "//third_party/rust/chromium_crates_io/vendor/sha2-v0_10/src/lib.rs",
+    "//third_party/rust/chromium_crates_io/vendor/sha2-v0_10/src/sha256.rs",
+    "//third_party/rust/chromium_crates_io/vendor/sha2-v0_10/src/sha256/aarch64.rs",
+    "//third_party/rust/chromium_crates_io/vendor/sha2-v0_10/src/sha256/loongarch64_asm.rs",
+    "//third_party/rust/chromium_crates_io/vendor/sha2-v0_10/src/sha256/soft.rs",
+    "//third_party/rust/chromium_crates_io/vendor/sha2-v0_10/src/sha256/x86.rs",
+    "//third_party/rust/chromium_crates_io/vendor/sha2-v0_10/src/sha512.rs",
+    "//third_party/rust/chromium_crates_io/vendor/sha2-v0_10/src/sha512/aarch64.rs",
+    "//third_party/rust/chromium_crates_io/vendor/sha2-v0_10/src/sha512/loongarch64_asm.rs",
+    "//third_party/rust/chromium_crates_io/vendor/sha2-v0_10/src/sha512/soft.rs",
+    "//third_party/rust/chromium_crates_io/vendor/sha2-v0_10/src/sha512/x86.rs",
   ]
   inputs = []
 
@@ -37,6 +37,7 @@ cargo_crate("lib") {
   cargo_pkg_authors = "RustCrypto Developers"
   cargo_pkg_name = "sha2"
   cargo_pkg_description = "Pure Rust implementation of the SHA-2 hash function family including SHA-224, SHA-256, SHA-384, and SHA-512."
+  library_configs -= [ "//build/config/coverage:default_coverage" ]
   library_configs -= [ "//build/config/compiler:chromium_code" ]
   library_configs += [ "//build/config/compiler:no_chromium_code" ]
   executable_configs -= [ "//build/config/compiler:chromium_code" ]
@@ -46,11 +47,16 @@ cargo_crate("lib") {
   deps = [
     "//third_party/rust/cfg_if/v1:lib",
     "//third_party/rust/digest/v0_10:lib",
-    "//third_party/rust/cpufeatures/v0_2:lib"
+  ]
+  if (current_cpu == "arm64" || current_cpu == "x64" || current_cpu == "x86") {
+    deps += [ "//third_party/rust/cpufeatures/v0_2:lib" ]
+  }
+  rustflags = [
+    "--cap-lints=allow",  # Suppress all warnings in crates.io crates
   ]
 
   # Only for usage from third-party crates. Add the crate to
   # //third_party/rust/chromium_crates_io/Cargo.toml to use
   # it from first-party code.
-  # visibility = [ "//third_party/rust/*" ]
+  visibility = [ "*" ]
 }

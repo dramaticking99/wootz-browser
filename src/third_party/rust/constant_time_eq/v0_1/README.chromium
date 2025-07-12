@@ -1,9 +1,10 @@
 Name: constant_time_eq
 URL: https://crates.io/crates/constant_time_eq
-Description: Compares two equal-sized byte strings in constant time.
 Version: 0.1.5
-Security Critical: yes
-Shipped: yes
-License: CC0 1.0
-License File:
 Revision: 8db4b026a1936dd0544587546275ce73fff9effa
+License: CC0-1.0
+License File: //third_party/rust/chromium_crates_io/vendor/constant_time_eq-v0_1/Cargo.toml
+Shipped: yes
+Security Critical: yes
+
+Description: Compares two equal-sized byte strings in constant time.

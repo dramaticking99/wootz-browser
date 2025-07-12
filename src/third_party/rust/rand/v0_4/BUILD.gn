@@ -13,26 +13,26 @@ cargo_crate("lib") {
   epoch = "0.4"
   crate_type = "rlib"
   crate_root =
-      "//third_party/rust/chromium_crates_io/vendor/rand-0.4.6/src/lib.rs"
+      "//third_party/rust/chromium_crates_io/vendor/rand-v0_4/src/lib.rs"
   sources = [
-    "//third_party/rust/chromium_crates_io/vendor/rand-0.4.6/src/distributions/exponential.rs",
-    "//third_party/rust/chromium_crates_io/vendor/rand-0.4.6/src/distributions/gamma.rs",
-    "//third_party/rust/chromium_crates_io/vendor/rand-0.4.6/src/distributions/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/rand-0.4.6/src/distributions/normal.rs",
-    "//third_party/rust/chromium_crates_io/vendor/rand-0.4.6/src/distributions/range.rs",
-    "//third_party/rust/chromium_crates_io/vendor/rand-0.4.6/src/distributions/ziggurat_tables.rs",
-    "//third_party/rust/chromium_crates_io/vendor/rand-0.4.6/src/jitter.rs",
-    "//third_party/rust/chromium_crates_io/vendor/rand-0.4.6/src/lib.rs",
-    "//third_party/rust/chromium_crates_io/vendor/rand-0.4.6/src/os.rs",
-    "//third_party/rust/chromium_crates_io/vendor/rand-0.4.6/src/prng/chacha.rs",
-    "//third_party/rust/chromium_crates_io/vendor/rand-0.4.6/src/prng/isaac.rs",
-    "//third_party/rust/chromium_crates_io/vendor/rand-0.4.6/src/prng/isaac64.rs",
-    "//third_party/rust/chromium_crates_io/vendor/rand-0.4.6/src/prng/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/rand-0.4.6/src/prng/xorshift.rs",
-    "//third_party/rust/chromium_crates_io/vendor/rand-0.4.6/src/rand_impls.rs",
-    "//third_party/rust/chromium_crates_io/vendor/rand-0.4.6/src/read.rs",
-    "//third_party/rust/chromium_crates_io/vendor/rand-0.4.6/src/reseeding.rs",
-    "//third_party/rust/chromium_crates_io/vendor/rand-0.4.6/src/seq.rs",
+    "//third_party/rust/chromium_crates_io/vendor/rand-v0_4/src/distributions/exponential.rs",
+    "//third_party/rust/chromium_crates_io/vendor/rand-v0_4/src/distributions/gamma.rs",
+    "//third_party/rust/chromium_crates_io/vendor/rand-v0_4/src/distributions/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/rand-v0_4/src/distributions/normal.rs",
+    "//third_party/rust/chromium_crates_io/vendor/rand-v0_4/src/distributions/range.rs",
+    "//third_party/rust/chromium_crates_io/vendor/rand-v0_4/src/distributions/ziggurat_tables.rs",
+    "//third_party/rust/chromium_crates_io/vendor/rand-v0_4/src/jitter.rs",
+    "//third_party/rust/chromium_crates_io/vendor/rand-v0_4/src/lib.rs",
+    "//third_party/rust/chromium_crates_io/vendor/rand-v0_4/src/os.rs",
+    "//third_party/rust/chromium_crates_io/vendor/rand-v0_4/src/prng/chacha.rs",
+    "//third_party/rust/chromium_crates_io/vendor/rand-v0_4/src/prng/isaac.rs",
+    "//third_party/rust/chromium_crates_io/vendor/rand-v0_4/src/prng/isaac64.rs",
+    "//third_party/rust/chromium_crates_io/vendor/rand-v0_4/src/prng/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/rand-v0_4/src/prng/xorshift.rs",
+    "//third_party/rust/chromium_crates_io/vendor/rand-v0_4/src/rand_impls.rs",
+    "//third_party/rust/chromium_crates_io/vendor/rand-v0_4/src/read.rs",
+    "//third_party/rust/chromium_crates_io/vendor/rand-v0_4/src/reseeding.rs",
+    "//third_party/rust/chromium_crates_io/vendor/rand-v0_4/src/seq.rs",
   ]
   inputs = []
 
@@ -43,6 +43,7 @@ cargo_crate("lib") {
   cargo_pkg_name = "rand"
   cargo_pkg_description =
       "Random number generators and other randomness functionality."
+  library_configs -= [ "//build/config/coverage:default_coverage" ]
   library_configs -= [ "//build/config/compiler:chromium_code" ]
   library_configs += [ "//build/config/compiler:no_chromium_code" ]
   executable_configs -= [ "//build/config/compiler:chromium_code" ]
@@ -60,13 +61,16 @@ cargo_crate("lib") {
     deps += [ "//third_party/rust/winapi/v0_3:lib" ]
   }
   features = [
+    "default",
     "libc",
     "std",
+  ]
+  rustflags = [
+    "--cap-lints=allow",  # Suppress all warnings in crates.io crates
   ]
 
   # Only for usage from third-party crates. Add the crate to
   # //third_party/rust/chromium_crates_io/Cargo.toml to use
   # it from first-party code.
-  visibility = [ "//third_party/rust/*" ]
-  testonly = true
+  visibility = [ "*" ]
 }

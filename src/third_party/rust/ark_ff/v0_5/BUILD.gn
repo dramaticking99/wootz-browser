@@ -13,45 +13,45 @@ cargo_crate("lib") {
   epoch = "0.5"
   crate_type = "rlib"
   crate_root =
-      "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/lib.rs"
+      "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/lib.rs"
   sources = [
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/biginteger/arithmetic.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/biginteger/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/biginteger/tests.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/bits.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/const_helpers.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/arithmetic.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/cyclotomic.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/fft_friendly.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/field_hashers/expander/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/field_hashers/expander/tests.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/field_hashers/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/models/cubic_extension.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/models/fp/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/models/fp/montgomery_backend.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/models/fp12_2over3over2.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/models/fp2.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/models/fp3.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/models/fp4.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/models/fp6_2over3.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/models/fp6_3over2.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/models/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/models/quadratic_extension.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/prime.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/sqrt.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/utils.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/lib.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/to_field_vec.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/biginteger/arithmetic.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/biginteger/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/biginteger/tests.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/bits.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/const_helpers.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/arithmetic.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/cyclotomic.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/fft_friendly.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/field_hashers/expander/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/field_hashers/expander/tests.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/field_hashers/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/models/cubic_extension.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/models/fp/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/models/fp/montgomery_backend.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/models/fp12_2over3over2.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/models/fp2.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/models/fp3.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/models/fp4.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/models/fp6_2over3.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/models/fp6_3over2.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/models/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/models/quadratic_extension.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/prime.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/sqrt.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/utils.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/lib.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/to_field_vec.rs",
   ]
   inputs = [
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/field_hashers/expander/testdata/expand_message_xmd_SHA256_256.json",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/field_hashers/expander/testdata/expand_message_xmd_SHA256_38.json",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/field_hashers/expander/testdata/expand_message_xmd_SHA512_38.json",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/field_hashers/expander/testdata/expand_message_xof_SHAKE128_256.json",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/field_hashers/expander/testdata/expand_message_xof_SHAKE128_36.json",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/src/fields/field_hashers/expander/testdata/expand_message_xof_SHAKE256_36.json",
-    "//third_party/rust/chromium_crates_io/vendor/ark-ff-0.5.0/README.md",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/../README.md",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/field_hashers/expander/testdata/expand_message_xmd_SHA256_256.json",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/field_hashers/expander/testdata/expand_message_xmd_SHA256_38.json",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/field_hashers/expander/testdata/expand_message_xmd_SHA512_38.json",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/field_hashers/expander/testdata/expand_message_xof_SHAKE128_256.json",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/field_hashers/expander/testdata/expand_message_xof_SHAKE128_36.json",
+    "//third_party/rust/chromium_crates_io/vendor/ark-ff-v0_5/src/fields/field_hashers/expander/testdata/expand_message_xof_SHAKE256_36.json",
   ]
 
   build_native_rust_unit_tests = false
@@ -60,6 +60,7 @@ cargo_crate("lib") {
   cargo_pkg_authors = "arkworks contributors"
   cargo_pkg_name = "ark-ff"
   cargo_pkg_description = "A library for finite fields"
+  library_configs -= [ "//build/config/coverage:default_coverage" ]
   library_configs -= [ "//build/config/compiler:chromium_code" ]
   library_configs += [ "//build/config/compiler:no_chromium_code" ]
   executable_configs -= [ "//build/config/compiler:chromium_code" ]
@@ -78,12 +79,29 @@ cargo_crate("lib") {
     "//third_party/rust/num_bigint/v0_4:lib",
     "//third_party/rust/num_traits/v0_2:lib",
     "//third_party/rust/paste/v1:lib",
+    "//third_party/rust/rayon/v1:lib",
     "//third_party/rust/zeroize/v1:lib",
   ]
+  features = [
+    "parallel",
+    "rayon",
+    "std",
+  ]
+  rustflags = [
+    "--cap-lints=allow",  # Suppress all warnings in crates.io crates
+  ]
 
-  # Only for usage from third-party crates. Add the crate to
-  # //third_party/rust/chromium_crates_io/Cargo.toml to use
-  # it from first-party code.
-  # visibility = [ "//third_party/rust/*" ]
+  # Allow anybody to link against this crate
+  #   – either list the specific component(s)…
+  visibility = [
+    "//third_party/rust/*",
+    "//components/zk_proof:*",
+  ]
+  # …or simply make it global:
+  # visibility = [ "*" ]
+
+  # The crate is used in production code, so it must not be test-only
+  # (otherwise GN would emit “test-only dependency” errors).
+  # Remove or comment out the flag:
   # testonly = true
 }

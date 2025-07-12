@@ -1,0 +1,10 @@
+Name: getrandom
+URL: https://crates.io/crates/getrandom
+Version: 0.2.16
+Revision: ce4144b2c16fe1422037c93e267e6a52336e0834
+License: Apache-2.0
+License File: //third_party/rust/chromium_crates_io/vendor/getrandom-v0_2/LICENSE-APACHE
+Shipped: yes
+Security Critical: yes
+
+Description: A small cross-platform library for retrieving random data from system source

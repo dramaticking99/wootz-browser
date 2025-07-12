@@ -158,6 +158,13 @@ fn cfg_to_condition(cfg: &cargo_platform::Cfg) -> Condition {
             "target_family" => target_family_to_condition(value),
             "target_os" => target_os_to_condition(value),
             "target_vendor" => target_vendor_to_condition(value),
+            "target_has_atomic" => {
+    match value.as_str() {           // <- convert &String → &str
+        "8" | "16" | "32" | "64" | "128" | "ptr" => Condition::AlwaysTrue,
+        _                                        => Condition::Ignored,
+    }
+},
+
             "panic" => panic_cfg_to_condition(value),
             _ => {
                 // Keys that start with `target_` are the only remaining ones that are 1) not

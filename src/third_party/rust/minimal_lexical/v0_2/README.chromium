@@ -1,0 +1,10 @@
+Name: minimal-lexical
+URL: https://crates.io/crates/minimal-lexical
+Version: 0.2.1
+Revision: e997c46656ebe83e696b866bd954da1fa3f64eef
+License: Apache-2.0
+License File: //third_party/rust/chromium_crates_io/vendor/minimal-lexical-v0_2/LICENSE-APACHE
+Shipped: yes
+Security Critical: yes
+
+Description: Fast float parsing conversion routines.

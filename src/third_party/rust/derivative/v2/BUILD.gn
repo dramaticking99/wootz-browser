@@ -13,20 +13,20 @@ cargo_crate("lib") {
   epoch = "2"
   crate_type = "proc-macro"
   crate_root =
-      "//third_party/rust/chromium_crates_io/vendor/derivative-2.2.0/src/lib.rs"
+      "//third_party/rust/chromium_crates_io/vendor/derivative-v2/src/lib.rs"
   sources = [
-    "//third_party/rust/chromium_crates_io/vendor/derivative-2.2.0/src/ast.rs",
-    "//third_party/rust/chromium_crates_io/vendor/derivative-2.2.0/src/attr.rs",
-    "//third_party/rust/chromium_crates_io/vendor/derivative-2.2.0/src/bound.rs",
-    "//third_party/rust/chromium_crates_io/vendor/derivative-2.2.0/src/clone.rs",
-    "//third_party/rust/chromium_crates_io/vendor/derivative-2.2.0/src/cmp.rs",
-    "//third_party/rust/chromium_crates_io/vendor/derivative-2.2.0/src/debug.rs",
-    "//third_party/rust/chromium_crates_io/vendor/derivative-2.2.0/src/default.rs",
-    "//third_party/rust/chromium_crates_io/vendor/derivative-2.2.0/src/hash.rs",
-    "//third_party/rust/chromium_crates_io/vendor/derivative-2.2.0/src/lib.rs",
-    "//third_party/rust/chromium_crates_io/vendor/derivative-2.2.0/src/matcher.rs",
-    "//third_party/rust/chromium_crates_io/vendor/derivative-2.2.0/src/paths.rs",
-    "//third_party/rust/chromium_crates_io/vendor/derivative-2.2.0/src/utils.rs",
+    "//third_party/rust/chromium_crates_io/vendor/derivative-v2/src/ast.rs",
+    "//third_party/rust/chromium_crates_io/vendor/derivative-v2/src/attr.rs",
+    "//third_party/rust/chromium_crates_io/vendor/derivative-v2/src/bound.rs",
+    "//third_party/rust/chromium_crates_io/vendor/derivative-v2/src/clone.rs",
+    "//third_party/rust/chromium_crates_io/vendor/derivative-v2/src/cmp.rs",
+    "//third_party/rust/chromium_crates_io/vendor/derivative-v2/src/debug.rs",
+    "//third_party/rust/chromium_crates_io/vendor/derivative-v2/src/default.rs",
+    "//third_party/rust/chromium_crates_io/vendor/derivative-v2/src/hash.rs",
+    "//third_party/rust/chromium_crates_io/vendor/derivative-v2/src/lib.rs",
+    "//third_party/rust/chromium_crates_io/vendor/derivative-v2/src/matcher.rs",
+    "//third_party/rust/chromium_crates_io/vendor/derivative-v2/src/paths.rs",
+    "//third_party/rust/chromium_crates_io/vendor/derivative-v2/src/utils.rs",
   ]
   inputs = []
 
@@ -36,6 +36,7 @@ cargo_crate("lib") {
   cargo_pkg_authors = "mcarton <cartonmartin+git@gmail.com>"
   cargo_pkg_name = "derivative"
   cargo_pkg_description = "A set of alternative `derive` attributes for Rust"
+  library_configs -= [ "//build/config/coverage:default_coverage" ]
   library_configs -= [ "//build/config/compiler:chromium_code" ]
   library_configs += [ "//build/config/compiler:no_chromium_code" ]
   executable_configs -= [ "//build/config/compiler:chromium_code" ]
@@ -48,9 +49,12 @@ cargo_crate("lib") {
     "//third_party/rust/syn/v1:lib",
   ]
   features = [ "use_core" ]
+  rustflags = [
+    "--cap-lints=allow",  # Suppress all warnings in crates.io crates
+  ]
 
   # Only for usage from third-party crates. Add the crate to
   # //third_party/rust/chromium_crates_io/Cargo.toml to use
   # it from first-party code.
-  visibility = [ "//third_party/rust/*" ]
+  visibility = [ "*" ]
 }

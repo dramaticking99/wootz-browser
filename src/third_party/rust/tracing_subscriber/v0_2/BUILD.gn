@@ -12,43 +12,43 @@ cargo_crate("lib") {
   crate_name = "tracing_subscriber"
   epoch = "0.2"
   crate_type = "rlib"
-  crate_root = "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/lib.rs"
+  crate_root = "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/lib.rs"
   sources = [
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/field/debug.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/field/delimited.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/field/display.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/field/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/filter/directive.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/filter/env/directive.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/filter/env/field.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/filter/env/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/filter/filter_fn.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/filter/layer_filters.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/filter/level.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/filter/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/filter/targets.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/fmt/fmt_layer.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/fmt/format/json.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/fmt/format/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/fmt/format/pretty.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/fmt/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/fmt/time/datetime.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/fmt/time/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/fmt/writer.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/layer/context.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/layer/layered.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/layer/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/layer/tests.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/lib.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/prelude.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/registry/extensions.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/registry/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/registry/sharded.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/registry/stack.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/reload.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/sync.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/thread.rs",
-    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-0.2.25/src/util.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/field/debug.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/field/delimited.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/field/display.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/field/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/filter/directive.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/filter/env/directive.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/filter/env/field.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/filter/env/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/filter/filter_fn.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/filter/layer_filters.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/filter/level.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/filter/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/filter/targets.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/fmt/fmt_layer.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/fmt/format/json.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/fmt/format/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/fmt/format/pretty.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/fmt/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/fmt/time/datetime.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/fmt/time/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/fmt/writer.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/layer/context.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/layer/layered.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/layer/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/layer/tests.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/lib.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/prelude.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/registry/extensions.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/registry/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/registry/sharded.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/registry/stack.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/reload.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/sync.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/thread.rs",
+    "//third_party/rust/chromium_crates_io/vendor/tracing-subscriber-v0_2/src/util.rs",
   ]
   inputs = []
 
@@ -59,6 +59,7 @@ cargo_crate("lib") {
   cargo_pkg_name = "tracing-subscriber"
   cargo_pkg_description =
       "Utilities for implementing and composing `tracing` subscribers."
+  library_configs -= [ "//build/config/coverage:default_coverage" ]
   library_configs -= [ "//build/config/compiler:chromium_code" ]
   library_configs += [ "//build/config/compiler:no_chromium_code" ]
   executable_configs -= [ "//build/config/compiler:chromium_code" ]
@@ -66,9 +67,12 @@ cargo_crate("lib") {
   proc_macro_configs -= [ "//build/config/compiler:chromium_code" ]
   proc_macro_configs += [ "//build/config/compiler:no_chromium_code" ]
   deps = [ "//third_party/rust/tracing_core/v0_1:lib" ]
+  rustflags = [
+    "--cap-lints=allow",  # Suppress all warnings in crates.io crates
+  ]
 
   # Only for usage from third-party crates. Add the crate to
   # //third_party/rust/chromium_crates_io/Cargo.toml to use
   # it from first-party code.
-  visibility = [ "//third_party/rust/*" ]
+  visibility = [ "*" ]
 }

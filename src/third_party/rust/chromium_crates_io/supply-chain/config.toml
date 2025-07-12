@@ -10,7 +10,7 @@ url = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/re
 
 [imports.chromeos.criteria-map]
 crypto-safe = "crypto-safe"
-crypto-safe = "crypto-safe"
+does-not-implement-crypto = "does-not-implement-crypto"
 ub-risk-0 = "ub-risk-0"
 ub-risk-1 = "ub-risk-1"
 ub-risk-2 = "ub-risk-2"
@@ -22,7 +22,7 @@ url = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/ru
 
 [imports.fuchsia.criteria-map]
 crypto-safe = "crypto-safe"
-crypto-safe = "crypto-safe"
+does-not-implement-crypto = "does-not-implement-crypto"
 ub-risk-0 = "ub-risk-0"
 ub-risk-1 = "ub-risk-1"
 ub-risk-2 = "ub-risk-2"
@@ -34,7 +34,7 @@ url = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-so
 
 [imports.google.criteria-map]
 crypto-safe = "crypto-safe"
-crypto-safe = "crypto-safe"
+does-not-implement-crypto = "does-not-implement-crypto"
 ub-risk-0 = "ub-risk-0"
 ub-risk-1 = "ub-risk-1"
 ub-risk-2 = "ub-risk-2"
@@ -44,19 +44,73 @@ ub-risk-4 = "ub-risk-4"
 [policy."adler2:2.0.0"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
+[policy."ahash:0.8.12"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."aho-corasick:1.1.3"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."allocator-api2:0.2.21"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."android_system_properties:0.1.5"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."anstyle:1.0.10"]
 criteria = ["crypto-safe", "safe-to-run"]
 
+[policy."anyhow:1.0.98"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."ark-bls12-381:0.5.0"]
+criteria = ["crypto-safe", "safe-to-run"]
+
+[policy."ark-bn254:0.5.0"]
+criteria = ["crypto-safe", "safe-to-run"]
+
+[policy."ark-crypto-primitives-macros:0.5.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."ark-crypto-primitives:0.5.0"]
+criteria = ["crypto-safe", "safe-to-run"]
+
+[policy."ark-ec:0.5.0"]
+criteria = ["crypto-safe", "safe-to-run"]
+
+[policy."ark-ff-asm:0.5.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."ark-ff-macros:0.5.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."ark-ff:0.5.0"]
+criteria = ["crypto-safe", "safe-to-run"]
+
+[policy."ark-groth16:0.5.0"]
+criteria = ["crypto-safe", "safe-to-run"]
+
+[policy."ark-poly:0.5.0"]
+criteria = ["crypto-safe", "safe-to-run"]
+
+[policy."ark-relations:0.5.1"]
+criteria = ["crypto-safe", "safe-to-run"]
+
+[policy."ark-serialize-derive:0.5.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."ark-serialize:0.5.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."ark-snark:0.5.1"]
+criteria = ["crypto-safe", "safe-to-run"]
+
+[policy."ark-std:0.5.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."arrayref:0.3.8"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
-[policy."arrayvec:0.7.4"]
-criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
-
-[policy."anyhow:1.0.98"]
+[policy."arrayvec:0.5.2"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."arrayvec:0.7.6"]
@@ -65,13 +119,31 @@ criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 [policy."autocfg:1.4.0"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
+[policy."base64:0.13.1"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."base64:0.22.1"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."bellman:0.14.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."bit-vec:0.6.3"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."bitflags:2.9.0"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
+[policy."bitvec:1.0.1"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."blake2:0.10.6"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."blake2b_simd:1.0.2"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."blake2s_simd:0.5.11"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."blake2s_simd:1.0.2"]
@@ -83,6 +155,9 @@ criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 [policy."block-buffer:0.10.4"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
+[policy."bls12_381:0.8.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."bumpalo:3.17.0"]
 criteria = []
 
@@ -92,6 +167,9 @@ criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 [policy."bytemuck_derive:1.9.3"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
+[policy."byteorder:1.5.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."bytes:1.10.1"]
 criteria = ["crypto-safe", "safe-to-run"]
 
@@ -99,7 +177,7 @@ criteria = ["crypto-safe", "safe-to-run"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."cc:1.2.19"]
-criteria = []
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."cfg-if:1.0.0"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
@@ -116,34 +194,52 @@ criteria = ["crypto-safe", "safe-to-run"]
 [policy."codespan-reporting:0.12.0"]
 criteria = ["crypto-safe", "safe-to-run"]
 
+[policy."constant_time_eq:0.1.5"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."constant_time_eq:0.3.0"]
-criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
-
-[policy."core2:0.4.0"]
-criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
-
-[policy."cpufeatures:0.2.13"]
-criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
-
-[policy."crypto-common:0.1.6"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."core-foundation-sys:0.8.7"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
+[policy."core2:0.4.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."core_maths:0.1.1"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."cpufeatures:0.2.13"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."crc32fast:1.4.2"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
+[policy."crossbeam-channel:0.5.15"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."crossbeam-deque:0.8.6"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."crossbeam-epoch:0.9.18"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."crossbeam-queue:0.3.12"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."crossbeam-utils:0.8.21"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."crossbeam:0.8.4"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."crunchy:0.2.4"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."crypto-common:0.1.6"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."cxx:1.0.156"]
-criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
-
-[policy."digest:0.10.7"]
-criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
-
-[policy."digest:0.9.0"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."cxxbridge-cmd:1.0.156"]
@@ -155,7 +251,16 @@ criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 [policy."cxxbridge-macro:1.0.156"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
+[policy."derivative:2.2.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."derivre:0.3.7"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."digest:0.10.7"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."digest:0.9.0"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."diplomat-runtime:0.10.0"]
@@ -170,7 +275,16 @@ criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 [policy."displaydoc:0.2.5"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
+[policy."educe:0.6.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."either:1.15.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."enum-ordinalize-derive:4.3.1"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."enum-ordinalize:4.3.0"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."equivalent:1.0.2"]
@@ -191,13 +305,52 @@ criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 [policy."flate2:1.1.1"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
+[policy."fnv:1.0.7"]
+criteria = []
+
 [policy."foldhash:0.1.5"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."font-types:0.8.4"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
+[policy."fuchsia-cprng:0.1.1"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."funty:2.0.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."futures-channel:0.3.31"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."futures-core:0.3.31"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."futures-executor:0.3.31"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."futures-io:0.3.31"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."futures-sink:0.3.31"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."futures-task:0.3.31"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."futures-util:0.3.31"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."futures:0.3.31"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."generic-array:0.14.7"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."getrandom:0.2.16"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."groth16:0.1.0"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."group:0.13.0"]
@@ -206,7 +359,16 @@ criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 [policy."hashbrown:0.15.2"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
+[policy."heck:0.4.1"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."heck:0.5.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."hermit-abi:0.5.2"]
+criteria = []
+
+[policy."hex-literal:0.4.1"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."hex:0.4.3"]
@@ -323,6 +485,9 @@ criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 [policy."itertools:0.11.0"]
 criteria = ["crypto-safe", "safe-to-run"]
 
+[policy."itertools:0.13.0"]
+criteria = ["crypto-safe", "safe-to-run"]
+
 [policy."itoa:1.0.15"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
@@ -359,6 +524,12 @@ criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 [policy."memchr:2.7.4"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
+[policy."merlin:3.0.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."minimal-lexical:0.2.1"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."miniz_oxide:0.8.8"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
@@ -366,6 +537,9 @@ criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."multihash:0.16.3"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."nom:7.1.3"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."num-bigint:0.4.6"]
@@ -380,8 +554,32 @@ criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 [policy."num-traits:0.2.19"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
+[policy."num_cpus:1.17.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."once_cell:1.21.3"]
-criteria = []
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."pairing:0.23.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."paste:1.0.15"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."pin-project-lite:0.2.16"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."pin-utils:0.1.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."png:0.18.0-rc"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."potential_utf:0.1.2"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."ppv-lite86:0.2.21"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."proc-macro-crate:1.1.3"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
@@ -390,12 +588,6 @@ criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."proc-macro-error:1.0.4"]
-criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
-
-[policy."png:0.18.0-rc"]
-criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
-
-[policy."potential_utf:0.1.2"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."proc-macro2:1.0.94"]
@@ -413,8 +605,41 @@ criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 [policy."quote:1.0.40"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
+[policy."radium:0.7.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."rand:0.4.6"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."rand:0.8.5"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."rand_chacha:0.3.1"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."rand_core:0.3.1"]
+criteria = []
+
+[policy."rand_core:0.4.2"]
+criteria = []
+
+[policy."rand_core:0.6.4"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."rand_core:0.9.3"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."rand_pcg:0.3.1"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."rayon-core:1.12.1"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."rayon:1.10.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."rdrand:0.4.0"]
+criteria = []
 
 [policy."read-fonts:0.27.5"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
@@ -423,6 +648,12 @@ criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."regex-syntax:0.8.5"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."regex:1.11.1"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."rstest_reuse:0.5.0"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."rust_decimal:1.37.1"]
@@ -434,10 +665,16 @@ criteria = ["crypto-safe", "safe-to-run"]
 [policy."rustc-demangle:0.1.24"]
 criteria = ["crypto-safe", "safe-to-run"]
 
+[policy."rustc_version:0.4.1"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."rustversion:1.0.20"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."ryu:1.0.20"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."semver:1.0.26"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."serde:1.0.219"]
@@ -452,22 +689,25 @@ criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 [policy."serde_json_lenient:0.2.4"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
+[policy."sfv:0.10.4"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."sha2:0.10.8"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."sha3:0.10.8"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
-[policy."sfv:0.10.4"]
-criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
-
 [policy."shlex:1.3.0"]
-criteria = []
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."simd-adler32:0.3.7"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."skrifa:0.29.2"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."slab:0.4.10"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."small_ctor:0.1.2"]
@@ -488,13 +728,22 @@ criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 [policy."strsim:0.11.1"]
 criteria = ["crypto-safe", "safe-to-run"]
 
+[policy."strum:0.25.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."strum:0.27.1"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."strum_macros:0.25.3"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."strum_macros:0.27.1"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."subtle:2.6.1"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."syn:1.0.109"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."syn:2.0.100"]
@@ -506,10 +755,7 @@ criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 [policy."synstructure:0.13.1"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
-[policy."thiserror-impl:1.0.63"]
-criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
-
-[policy."thiserror:1.0.63"]
+[policy."tap:1.0.1"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."temporal_capi:0.0.6"]
@@ -521,19 +767,34 @@ criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 [policy."termcolor:1.4.1"]
 criteria = ["crypto-safe", "safe-to-run"]
 
+[policy."thiserror-impl:1.0.63"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."thiserror:1.0.63"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."tiny-keccak:1.5.0"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."tinystr:0.8.1"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."toktrie:0.7.14"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
-[policy."unicode-xid:0.2.4"]
+[policy."toml:0.5.11"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
-[policy."unsigned-varint:0.7.2"]
+[policy."tracing-core:0.1.34"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
-[policy."version_check:0.9.5"]
+[policy."tracing-subscriber:0.2.25"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."tracing:0.1.41"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."typenum:1.17.0"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."unicode-bidi:0.3.18"]
@@ -545,11 +806,26 @@ criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 [policy."unicode-width:0.1.14"]
 criteria = ["crypto-safe", "safe-to-run"]
 
+[policy."unicode-xid:0.2.4"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."unsigned-varint:0.7.2"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."utf16_iter:1.0.5"]
 criteria = []
 
 [policy."utf8_iter:1.0.4"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."valuable:0.1.1"]
+criteria = []
+
+[policy."version_check:0.9.5"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."wasi:0.11.1+wasi-snapshot-preview1"]
+criteria = []
 
 [policy."wasm-bindgen-backend:0.2.100"]
 criteria = []
@@ -566,8 +842,17 @@ criteria = []
 [policy."wasm-bindgen:0.2.100"]
 criteria = []
 
+[policy."winapi-i686-pc-windows-gnu:0.4.0"]
+criteria = []
+
 [policy."winapi-util:0.1.9"]
 criteria = ["crypto-safe", "safe-to-run"]
+
+[policy."winapi-x86_64-pc-windows-gnu:0.4.0"]
+criteria = []
+
+[policy."winapi:0.3.9"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."windows-core:0.61.0"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
@@ -620,16 +905,34 @@ criteria = ["crypto-safe", "safe-to-run"]
 [policy."writeable:0.6.1"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
+[policy."wycheproof:0.4.0"]
+criteria = ["crypto-safe", "safe-to-run"]
+
+[policy."wyz:0.5.1"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."yoke-derive:0.8.0"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."yoke:0.8.0"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
+[policy."zerocopy-derive:0.8.26"]
+criteria = []
+
+[policy."zerocopy:0.8.26"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
 [policy."zerofrom-derive:0.1.6"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."zerofrom:0.1.6"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."zeroize:1.8.1"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."zeroize_derive:1.4.2"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."zerotrie:0.2.1"]
@@ -640,6 +943,18 @@ criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
 
 [policy."zerovec:0.11.1"]
 criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."zksync_bellman:0.32.1"]
+criteria = ["crypto-safe", "safe-to-run"]
+
+[policy."zksync_ff:0.32.1"]
+criteria = ["crypto-safe", "safe-to-run"]
+
+[policy."zksync_ff_derive:0.32.1"]
+criteria = ["crypto-safe", "safe-to-deploy", "ub-risk-2"]
+
+[policy."zksync_pairing:0.32.1"]
+criteria = ["crypto-safe", "safe-to-run"]
 
 [[exemptions.aho-corasick]]
 version = "1.1.3"

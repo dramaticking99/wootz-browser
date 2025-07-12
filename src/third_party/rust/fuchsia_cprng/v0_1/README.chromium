@@ -1,8 +1,9 @@
 Name: fuchsia-cprng
 URL: https://crates.io/crates/fuchsia-cprng
-Description: Rust crate for the Fuchsia cryptographically secure pseudorandom number generator
 Version: 0.1.1
-Security Critical: yes
+License: BSD-3-Clause
+License File: //third_party/rust/chromium_crates_io/vendor/fuchsia-cprng-v0_1/LICENSE
 Shipped: yes
-License: UNKNOWN
-License File: //third_party/rust/chromium_crates_io/vendor/fuchsia-cprng-0.1.1/LICENSE
+Security Critical: yes
+
+Description: Rust crate for the Fuchsia cryptographically secure pseudorandom number generator

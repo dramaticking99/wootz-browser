@@ -13,34 +13,34 @@ cargo_crate("lib") {
   epoch = "0.15"
   crate_type = "rlib"
   crate_root =
-      "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/lib.rs"
+      "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/lib.rs"
   sources = [
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/control/bitmask.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/control/group/generic.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/control/group/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/control/group/neon.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/control/group/sse2.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/control/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/control/tag.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/external_trait_impls/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/external_trait_impls/rayon/helpers.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/external_trait_impls/rayon/map.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/external_trait_impls/rayon/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/external_trait_impls/rayon/raw.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/external_trait_impls/rayon/set.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/external_trait_impls/rayon/table.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/external_trait_impls/serde.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/lib.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/macros.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/map.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/raw/alloc.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/raw/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/raw_entry.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/rustc_entry.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/scopeguard.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/set.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/table.rs",
-    "//third_party/rust/chromium_crates_io/vendor/hashbrown-0.15.2/src/util.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/control/bitmask.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/control/group/generic.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/control/group/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/control/group/neon.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/control/group/sse2.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/control/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/control/tag.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/external_trait_impls/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/external_trait_impls/rayon/helpers.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/external_trait_impls/rayon/map.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/external_trait_impls/rayon/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/external_trait_impls/rayon/raw.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/external_trait_impls/rayon/set.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/external_trait_impls/rayon/table.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/external_trait_impls/serde.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/lib.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/macros.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/map.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/raw/alloc.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/raw/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/raw_entry.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/rustc_entry.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/scopeguard.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/set.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/table.rs",
+    "//third_party/rust/chromium_crates_io/vendor/hashbrown-v0_15/src/util.rs",
   ]
   inputs = []
 
@@ -50,6 +50,7 @@ cargo_crate("lib") {
   cargo_pkg_authors = "Amanieu d'Antras <amanieu@gmail.com>"
   cargo_pkg_name = "hashbrown"
   cargo_pkg_description = "A Rust port of Google's SwissTable hash map"
+  library_configs -= [ "//build/config/coverage:default_coverage" ]
   library_configs -= [ "//build/config/compiler:chromium_code" ]
   library_configs += [ "//build/config/compiler:no_chromium_code" ]
   executable_configs -= [ "//build/config/compiler:chromium_code" ]
@@ -61,9 +62,12 @@ cargo_crate("lib") {
     "allocator-api2",
     "inline-more",
   ]
+  rustflags = [
+    "--cap-lints=allow",  # Suppress all warnings in crates.io crates
+  ]
 
   # Only for usage from third-party crates. Add the crate to
   # //third_party/rust/chromium_crates_io/Cargo.toml to use
   # it from first-party code.
-  visibility = [ "//third_party/rust/*" ]
+  visibility = [ "*" ]
 }

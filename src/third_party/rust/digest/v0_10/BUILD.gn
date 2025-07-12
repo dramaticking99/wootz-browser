@@ -1,7 +1,6 @@
-# Copyright (c) 2024 The Wootzapp Authors. All rights reserved.
-# This Source Code Form is subject to the terms of the Mozilla Public
-# License, v. 2.0. If a copy of the MPL was not distributed with this file,
-# You can obtain one at https://mozilla.org/MPL/2.0/.
+# Copyright 2023 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
 
 # @generated from third_party/rust/chromium_crates_io/BUILD.gn.hbs by
 # tools/crates/gnrt.
@@ -13,22 +12,23 @@ cargo_crate("lib") {
   crate_name = "digest"
   epoch = "0.10"
   crate_type = "rlib"
-  crate_root = "//third_party/rust/chromium_crates_io/vendor/digest-0.10.7/src/lib.rs"
+  crate_root =
+      "//third_party/rust/chromium_crates_io/vendor/digest-v0_10/src/lib.rs"
   sources = [
-    "//third_party/rust/chromium_crates_io/vendor/digest-0.10.7/src/core_api.rs",
-    "//third_party/rust/chromium_crates_io/vendor/digest-0.10.7/src/core_api/ct_variable.rs",
-    "//third_party/rust/chromium_crates_io/vendor/digest-0.10.7/src/core_api/rt_variable.rs",
-    "//third_party/rust/chromium_crates_io/vendor/digest-0.10.7/src/core_api/wrapper.rs",
-    "//third_party/rust/chromium_crates_io/vendor/digest-0.10.7/src/core_api/xof_reader.rs",
-    "//third_party/rust/chromium_crates_io/vendor/digest-0.10.7/src/dev.rs",
-    "//third_party/rust/chromium_crates_io/vendor/digest-0.10.7/src/dev/fixed.rs",
-    "//third_party/rust/chromium_crates_io/vendor/digest-0.10.7/src/dev/mac.rs",
-    "//third_party/rust/chromium_crates_io/vendor/digest-0.10.7/src/dev/rng.rs",
-    "//third_party/rust/chromium_crates_io/vendor/digest-0.10.7/src/dev/variable.rs",
-    "//third_party/rust/chromium_crates_io/vendor/digest-0.10.7/src/dev/xof.rs",
-    "//third_party/rust/chromium_crates_io/vendor/digest-0.10.7/src/digest.rs",
-    "//third_party/rust/chromium_crates_io/vendor/digest-0.10.7/src/lib.rs",
-    "//third_party/rust/chromium_crates_io/vendor/digest-0.10.7/src/mac.rs",
+    "//third_party/rust/chromium_crates_io/vendor/digest-v0_10/src/core_api.rs",
+    "//third_party/rust/chromium_crates_io/vendor/digest-v0_10/src/core_api/ct_variable.rs",
+    "//third_party/rust/chromium_crates_io/vendor/digest-v0_10/src/core_api/rt_variable.rs",
+    "//third_party/rust/chromium_crates_io/vendor/digest-v0_10/src/core_api/wrapper.rs",
+    "//third_party/rust/chromium_crates_io/vendor/digest-v0_10/src/core_api/xof_reader.rs",
+    "//third_party/rust/chromium_crates_io/vendor/digest-v0_10/src/dev.rs",
+    "//third_party/rust/chromium_crates_io/vendor/digest-v0_10/src/dev/fixed.rs",
+    "//third_party/rust/chromium_crates_io/vendor/digest-v0_10/src/dev/mac.rs",
+    "//third_party/rust/chromium_crates_io/vendor/digest-v0_10/src/dev/rng.rs",
+    "//third_party/rust/chromium_crates_io/vendor/digest-v0_10/src/dev/variable.rs",
+    "//third_party/rust/chromium_crates_io/vendor/digest-v0_10/src/dev/xof.rs",
+    "//third_party/rust/chromium_crates_io/vendor/digest-v0_10/src/digest.rs",
+    "//third_party/rust/chromium_crates_io/vendor/digest-v0_10/src/lib.rs",
+    "//third_party/rust/chromium_crates_io/vendor/digest-v0_10/src/mac.rs",
   ]
   inputs = []
 
@@ -39,6 +39,7 @@ cargo_crate("lib") {
   cargo_pkg_name = "digest"
   cargo_pkg_description =
       "Traits for cryptographic hash functions and message authentication codes"
+  library_configs -= [ "//build/config/coverage:default_coverage" ]
   library_configs -= [ "//build/config/compiler:chromium_code" ]
   library_configs += [ "//build/config/compiler:no_chromium_code" ]
   executable_configs -= [ "//build/config/compiler:chromium_code" ]
@@ -54,8 +55,16 @@ cargo_crate("lib") {
     "alloc",
     "block-buffer",
     "core-api",
+    "default",
     "mac",
-    "std",
     "subtle",
   ]
+  rustflags = [
+    "--cap-lints=allow",  # Suppress all warnings in crates.io crates
+  ]
+
+  # Only for usage from third-party crates. Add the crate to
+  # //third_party/rust/chromium_crates_io/Cargo.toml to use
+  # it from first-party code.
+  visibility = [ "*" ]
 }

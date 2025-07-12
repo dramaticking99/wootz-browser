@@ -13,23 +13,23 @@ cargo_crate("lib") {
   epoch = "0.5"
   crate_type = "rlib"
   crate_root =
-      "//third_party/rust/chromium_crates_io/vendor/ark-bn254-0.5.0/src/lib.rs"
+      "//third_party/rust/chromium_crates_io/vendor/ark-bn254-v0_5/src/lib.rs"
   sources = [
-    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-0.5.0/src/constraints/curves.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-0.5.0/src/constraints/fields.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-0.5.0/src/constraints/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-0.5.0/src/curves/g1.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-0.5.0/src/curves/g2.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-0.5.0/src/curves/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-0.5.0/src/curves/tests.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-0.5.0/src/fields/fq.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-0.5.0/src/fields/fq12.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-0.5.0/src/fields/fq2.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-0.5.0/src/fields/fq6.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-0.5.0/src/fields/fr.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-0.5.0/src/fields/mod.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-0.5.0/src/fields/tests.rs",
-    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-0.5.0/src/lib.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-v0_5/src/constraints/curves.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-v0_5/src/constraints/fields.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-v0_5/src/constraints/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-v0_5/src/curves/g1.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-v0_5/src/curves/g2.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-v0_5/src/curves/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-v0_5/src/curves/tests.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-v0_5/src/fields/fq.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-v0_5/src/fields/fq12.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-v0_5/src/fields/fq2.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-v0_5/src/fields/fq6.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-v0_5/src/fields/fr.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-v0_5/src/fields/mod.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-v0_5/src/fields/tests.rs",
+    "//third_party/rust/chromium_crates_io/vendor/ark-bn254-v0_5/src/lib.rs",
   ]
   inputs = []
 
@@ -39,6 +39,7 @@ cargo_crate("lib") {
   cargo_pkg_authors = "arkworks contributors"
   cargo_pkg_name = "ark-bn254"
   cargo_pkg_description = "The BN254 pairing-friendly elliptic curve"
+  library_configs -= [ "//build/config/coverage:default_coverage" ]
   library_configs -= [ "//build/config/compiler:chromium_code" ]
   library_configs += [ "//build/config/compiler:no_chromium_code" ]
   executable_configs -= [ "//build/config/compiler:chromium_code" ]
@@ -52,7 +53,10 @@ cargo_crate("lib") {
   ]
   features = [
     "curve",
+    "default",
     "scalar_field",
   ]
-  # testonly = true
+  rustflags = [
+    "--cap-lints=allow",  # Suppress all warnings in crates.io crates
+  ]
 }

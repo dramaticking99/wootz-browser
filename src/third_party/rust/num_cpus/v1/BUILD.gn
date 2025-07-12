@@ -13,19 +13,20 @@ cargo_crate("lib") {
   epoch = "1"
   crate_type = "rlib"
   crate_root =
-      "//third_party/rust/chromium_crates_io/vendor/num_cpus-1.16.0/src/lib.rs"
+      "//third_party/rust/chromium_crates_io/vendor/num_cpus-v1/src/lib.rs"
   sources = [
-    "//third_party/rust/chromium_crates_io/vendor/num_cpus-1.16.0/src/lib.rs",
-    "//third_party/rust/chromium_crates_io/vendor/num_cpus-1.16.0/src/linux.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num_cpus-v1/src/lib.rs",
+    "//third_party/rust/chromium_crates_io/vendor/num_cpus-v1/src/linux.rs",
   ]
   inputs = []
 
   build_native_rust_unit_tests = false
   edition = "2015"
-  cargo_pkg_version = "1.16.0"
+  cargo_pkg_version = "1.17.0"
   cargo_pkg_authors = "Sean McArthur <sean@seanmonstar.com>"
   cargo_pkg_name = "num_cpus"
   cargo_pkg_description = "Get the number of CPUs on a machine."
+  library_configs -= [ "//build/config/coverage:default_coverage" ]
   library_configs -= [ "//build/config/compiler:chromium_code" ]
   library_configs += [ "//build/config/compiler:no_chromium_code" ]
   executable_configs -= [ "//build/config/compiler:chromium_code" ]
@@ -36,9 +37,12 @@ cargo_crate("lib") {
   if (!is_win) {
     deps += [ "//third_party/rust/libc/v0_2:lib" ]
   }
+  rustflags = [
+    "--cap-lints=allow",  # Suppress all warnings in crates.io crates
+  ]
 
   # Only for usage from third-party crates. Add the crate to
   # //third_party/rust/chromium_crates_io/Cargo.toml to use
   # it from first-party code.
-  visibility = [ "//third_party/rust/*" ]
+  visibility = [ "*" ]
 }
